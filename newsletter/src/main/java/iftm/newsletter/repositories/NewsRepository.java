@@ -1,4 +1,4 @@
-package iftm.newsletter.respositories;
+package iftm.newsletter.repositories;
 
 import iftm.newsletter.models.News;
 import org.bson.types.ObjectId;
