@@ -13,7 +13,7 @@ public class RabbitMqReadLog {
     @Autowired
     private LogService logService;
 
-    @RabbitListener(queues = "${softwareHouse.rabbitmq.queue}")
+    @RabbitListener(queues = "${newsletter.rabbitmq.queue}")
     public void receiveLog(@Payload final LogDTO logDTO) {
         if (logDTO != null) logService.save(logDTO);
     }

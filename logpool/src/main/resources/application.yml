@@ -20,11 +20,11 @@ eureka:
   client:
     service-url:
       defaultZone: 'http://localhost:8761/eureka'
-softwareHouse:
+newsletter:
   rabbitmq:
-    exchange: softwareHouse.exchange
-    rountingkey: softwareHouse.employee.routingkey
-    queue: softwareHouse.queue
+    exchange: newsletter.exchange
+    rountingkey: newsletter.newsletter.routingkey
+    queue: newsletter.queue
 logging:
   level:
     org:
