@@ -2,7 +2,7 @@ spring:
   application:
     name: eureka-client-logs
   profiles:
-    active: dev
+    active: developer
   config:
     import: optional:configserver:http://localhost:8888
   data:
