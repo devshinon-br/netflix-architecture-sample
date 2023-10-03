@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          uri: 'https://github.com/devshinon-br/software-house-config-repo'
+          # username: (github username) # config para repositorio privado
+          # password: (github senha) ou (github access-token)
+server:
+  port: 8888
