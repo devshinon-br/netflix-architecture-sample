@@ -12,7 +12,7 @@ function Notification() {
         body: payload?.notification?.body,
       });
       toast.success(`${payload?.notification?.title}: ${payload?.notification?.body}`, {
-        duration: 10000, 
+        duration: 10000,
         position: 'top-right',
       });
     });
@@ -20,7 +20,7 @@ function Notification() {
       unsubscribe.catch((err) => console.log('failed: ', err));
     };
   });
-  
+
   return (
     <div>
       <Toaster />

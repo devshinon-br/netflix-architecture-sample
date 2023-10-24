@@ -8,40 +8,40 @@ const firebaseConfig = {
   storageBucket: "",
   messagingSenderId: "",
   appId: ""
-}; 
+};
 
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
 
 export const requestPermission = () => {
 
-    console.log("Requesting User Permission......");
-    Notification.requestPermission().then((permission) => {
+  console.log("Requesting User Permission......");
+  Notification.requestPermission().then((permission) => {
 
-      if (permission === "granted") {
+    if (permission === "granted") {
 
-        console.log("Notification User Permission Granted."); 
-        return getToken(messaging, { vapidKey: "TODO: fill this field" })
-          .then((currentToken) => {
+      console.log("Notification User Permission Granted.");
+      return getToken(messaging, { vapidKey: "TODO: fill this field" })
+        .then((currentToken) => {
 
-            if (currentToken) {
+          if (currentToken) {
 
-              console.log('Client Token: ', currentToken);
-            } else {
-              
-              console.log('Failed to generate the app registration token.');
-            }
-          })
-          .catch((err) => {
+            console.log('Client Token: ', currentToken);
+          } else {
 
-            console.log('An error occurred when requesting to receive the token.', err);
-          });
-      } else {
+            console.log('Failed to generate the app registration token.');
+          }
+        })
+        .catch((err) => {
 
-        console.log("User Permission Denied.");
-      }
-    });
-  }
+          console.log('An error occurred when requesting to receive the token.', err);
+        });
+    } else {
+
+      console.log("User Permission Denied.");
+    }
+  });
+}
 
 requestPermission();
 
@@ -50,4 +50,4 @@ export const onMessageListener = () =>
     onMessage(messaging, (payload) => {
       resolve(payload);
     });
-});
+  });
