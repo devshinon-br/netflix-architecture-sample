@@ -4,14 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class NotificationMessage implements Serializable {
+    private String recipientToken;
     private String title;
-    private String authorName;
     private String body;
-    private List<Tag> tags;
+    private String image;
+    private Map<String, String> data;
 }

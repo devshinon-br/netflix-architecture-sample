@@ -15,19 +15,26 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+# choose random port
 server:
   port: '${PORT:0}'
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     service-url:
       defaultZone: 'http://localhost:8761/eureka'
+
+# custom config rabbitmq
 newsletter:
   rabbitmq:
     exchange: newsletter.exchange
     rountingkey: newsletter.employee.routingkey
     queue: newsletter.queue
+
+# show mongo queries in terminal
 logging:
   level:
     org:
@@ -36,3 +43,7 @@ logging:
           mongodb:
             core:
               MongoTemplate: DEBUG
+
+# custom configuration for firebase
+firebase:
+  credential-file-name: firebase.json
